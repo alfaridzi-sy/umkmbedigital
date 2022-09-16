@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('clusters', function (Blueprint $table) {
             $table->id('id_cluster');
-            $table->string('penanggung jawab');
+            $table->string('penanggung_jawab');
             $table->string('nama');
             $table->string('alamat');
             $table->unsignedBigInteger('id_admin');
