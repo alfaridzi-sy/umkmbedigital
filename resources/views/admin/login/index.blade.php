@@ -1,104 +1,99 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login - Sistem Informasi Manajemen dan Pemasaran</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href= {{ asset('assets/images/icon/favicon.ico') }}>
-    <link rel="stylesheet" href= {{ asset('assets/css/bootstrap.min.css') }}>
-    <link rel="stylesheet" href= {{ asset('assets/css/font-awesome.min.css') }}>
-    <link rel="stylesheet" href= {{ asset('assets/css/themify-icons.css') }}>
-    <link rel="stylesheet" href= {{ asset('assets/css/metisMenu.css') }}>
-    <link rel="stylesheet" href= {{ asset('assets/css/owl.carousel.min.css') }}>
-    <link rel="stylesheet" href= {{ asset('assets/css/slicknav.min.css') }}>
-    <!-- amchart css -->
-    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-    <!-- others css -->
-    <link rel="stylesheet" href= {{ asset('assets/css/typography.css') }}>
-    <link rel="stylesheet" href= {{ asset('assets/css/default-css.css') }}>
-    <link rel="stylesheet" href= {{ asset('assets/css/styles.css') }}>
-    <link rel="stylesheet" href= {{ asset('assets/css/responsive.css') }}>
-    <!-- modernizr css -->
-    <script src={{ asset('assets/js/vendor/modernizr-2.8.3.min.js') }}></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>
+        Login | UMKM Be Digital Sidamanik
+    </title>
+    <!-- Favicon -->
+    <link href="#" rel="icon" type="image/png">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!-- Icons -->
+    <link href="{{ asset('master/assets/js/plugins/nucleo/css/nucleo.css')}}" rel="stylesheet" />
+    <link href="{{ asset('master/assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css')}}" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link href="{{ asset('master/assets/css/argon-dashboard.css?v=1.1.0')}}" rel="stylesheet" />
 </head>
 
-<body>
+<body class="bg-default">
+    <div class="main-content">
 
-    <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <!-- preloader area start -->
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
-    <!-- preloader area end -->
-    <!-- login area start -->
-    <div class="login-area">
-        <div class="container">
-
-            <div class="login-box ptb--100">
-                <form method="POST" action="{{ route('admin.authenticate') }}">
-                    @csrf
-                    <div class="login-form-head">
-                        <h4>Masuk</h4>
-                        <p>Halo, Masuk dan mulai manajemen data dan pemasaran produk Kelompok Tani </p>
-                    </div>
-
-                    <div class="login-form-body">
-                        @if (session()->has('loginError'))
-                            <div class="alert-dismiss">
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    {{ session('loginError') }}
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span class="fa fa-times"></span>
-                                    </button>
-                                </div>
-                            </div>
-                            <br>
-                        @endif
-                        <div class="form-gp">
-                            <label for="username">Username</label>
-                            <input type="text" id="username" name="username" required>
-                            <i class="ti-user"></i>
-                        </div>
-                        <div class="form-gp">
-                            <label for="password">Password</label>
-                            <input type="password" id="password" name="password" required>
-                            <i class="ti-lock"></i>
-                        </div>
-                        <div class="row mb-4 rmber-area">
-                            <div class="col-6">
-                                <div class="custom-control custom-checkbox mr-sm-2">
-                                    <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                                    <label class="custom-control-label" for="customControlAutosizing">Ingat Saya</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="submit-btn-area">
-                            <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
-                        </div>
-                    </div>
-                </form>
+        <!-- Header -->
+        <div class="header bg-gradient-warning py-7 py-lg-8">
+            <div class="separator separator-bottom separator-skew zindex-100">
+                <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+                </svg>
             </div>
         </div>
+
+        <!-- Page content -->
+        <div class="container mt--8 pb-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-7">
+                    <div class="card bg-secondary shadow border-0">
+                        <div class="card-header bg-transparent pb-3">
+                            <div class="text-muted text-center mt-2 mb-3">
+                                <h1 class="text-dark"><strong>Sign in</strong></h1>
+                                <p class="text-lead text-dark">Selamat Datang di Sistem UMKM Be Digital Sidamanik</p>
+                            </div>
+                        </div>
+                        <div class="card-body px-lg-5 py-lg-5">
+                            <form role="form" method="POST" action="{{ route('admin.authenticate') }}">
+                                @csrf
+                                <div class="form-group mb-3">
+                                    <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                                        </div>
+                                        <input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" placeholder="Username" autofocus>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                        </div>
+                                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"  placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                <button type="submit" class="btn btn-default my-4">Sign in</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="py-7">
+            <div class="container">
+                <div class="copyright text-center text-xl-center text-muted">
+                    <p class="text-dark">
+                        Copyright © 2022 <a href="#" class="font-weight-bold ml-1 text-center text-danger">Made by Love</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
     </div>
-    <!-- login area end -->
-
-    <!-- jquery latest version -->
-    <script src={{ asset('assets/js/vendor/jquery-2.2.4.min.js') }}></script>
-    <!-- bootstrap 4 js -->
-    <script src={{ asset('assets/js/popper.min.js') }}></script>
-    <script src={{ asset('assets/js/bootstrap.min.js') }}></script>
-    <script src={{ asset('assets/js/owl.carousel.min.js') }}></script>
-    <script src={{ asset('assets/js/metisMenu.min.js') }}></script>
-    <script src={{ asset('assets/js/jquery.slimscroll.min.js') }}></script>
-    <script src={{ asset('assets/js/jquery.slicknav.min.js') }}></script>
-
-    <!-- others plugins -->
-    <script src={{ asset('assets/js/plugins.js') }}></script>
-    <script src={{ asset('assets/js/scripts.js') }}></script>
+    <!--   Core   -->
+    <script src="{{ asset('master/assets/js/plugins/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{ asset('master/assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+    <!--   Optional JS   -->
+    <!--   Argon JS   -->
+    <script src="{{ asset('master/assets/js/argon-dashboard.min.js?v=1.1.0')}}"></script>
+    <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+    <script>
+        window.TrackJS &&
+        TrackJS.install({
+            token: "ee6fab19c5a04ac1a32a645abde4613a",
+            application: "argon-dashboard-free"
+        });
+    </script>
 </body>
 
 </html>
