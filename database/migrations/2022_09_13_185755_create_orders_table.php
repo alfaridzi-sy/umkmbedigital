@@ -14,7 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_pesan');
+            $table->string('kd_pesan');
+            $table->date('tgl_pesan');
+            $table->string('alamat_kirim');
+            $table->string('total');
+            $table->integer('status_pesan');
+            $table->unsignedBigInteger('id_konsumen');
+            $table->foreign('id_konsumen')->references('id_konsumen')->on('consumers')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

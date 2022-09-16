@@ -14,7 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('payments', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_bayar');
+            $table->string('jumlah');
+            $table->date('tgl_bayar');
+            $table->string('bukti_bayar');
+            $table->unsignedBigInteger('id_pesan');
+            $table->foreign('id_pesan')->references('id_pesan')->on('orders')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
