@@ -5,9 +5,9 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Brand -->
-        {{-- <a href="#" class="text-center">
-            <img src="{{ asset('master/assets/img/fiesta.png') }}" height="100px" >
-        </a> --}}
+        <a href="#" class="text-center">
+            <img src="{{ asset('master/assets/img/fav.png') }}" height="100px" >
+        </a>
 
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
