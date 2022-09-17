@@ -22,6 +22,21 @@ Route::get('/adminIndex', function () {
     return view('admin.index');
 });
 
+Route::get('/cluster', function () {
+    return view('admin.cluster');
+});
+
 Route::get('adminLogin', [LoginController::class, 'index'])->name('admin.login');
 Route::post('adminAuthenticate', [LoginController::class, 'authenticate'])->name('admin.authenticate');
 Route::post('adminLogout', [LoginController::class, 'logout'])->name('admin.logout');
+
+Route::get('/cluster','App\Http\Controllers\ClusterController@index');
+Route::get('/cluster/create','App\Http\Controllers\ClusterController@create');
+Route::post('/cluster/show','App\Http\Controllers\ClusterController@show');
+Route::post('/cluster/edit/{id_cluster}','App\Http\Controllers\ClusterController@edit');;
+Route::post('/cluster/store','App\Http\Controllers\ClusterController@store');;
+Route::get('/cluster/destroy/{id_cluster}','App\Http\Controllers\ClusterController@destroy');
+Route::get('/cluster/update/{id_cluster}', 'App\Http\Controllers\ClusterController@update');
+
+// Laporan
+Route::get('/laporan/cluster','App\Http\Controllers\LaporanClusterController@cluster');

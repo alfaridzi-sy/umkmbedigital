@@ -15,7 +15,9 @@ class ClusterController extends Controller
      */
     public function index()
     {
-        //
+        $cluster = Cluster::all();
+                return view('admin.cluster', ["cluster" => $cluster]);
+            
     }
 
     /**
@@ -25,7 +27,7 @@ class ClusterController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.clustercreate');
     }
 
     /**
@@ -36,7 +38,15 @@ class ClusterController extends Controller
      */
     public function store(StoreClusterRequest $request)
     {
-        //
+        $new_id = Cluster::orderByDesc('id_cluster')->first();
+        
+        if(!isset($new_id->id_cluster)){
+            $new_id = sprintf('%04d',1);
+        }
+        else{
+            $new_id = sprintf('%04d',$new_id->id_cluster);
+        }
+        
     }
 
     /**
@@ -47,7 +57,9 @@ class ClusterController extends Controller
      */
     public function show(Cluster $cluster)
     {
-        //
+        $cluster = Cluster::find($cluster);
+        return view('admin.clusterdetail', ["clusters" => $cluster]);
+    
     }
 
     /**
@@ -58,7 +70,10 @@ class ClusterController extends Controller
      */
     public function edit(Cluster $cluster)
     {
-        //
+        $cluster = Cluster::where('id_cluster',$cluster)->first();
+        $cluster->update($request->all());
+        return redirect('/cluster');
+    
     }
 
     /**
@@ -70,7 +85,8 @@ class ClusterController extends Controller
      */
     public function update(UpdateClusterRequest $request, Cluster $cluster)
     {
-        //
+        $cluster = Cluster::where('id_cluster', $id_cluster)->first();
+        return view('admin.clusterupdate', ['cluster'=>$cluster]);
     }
 
     /**
@@ -81,6 +97,7 @@ class ClusterController extends Controller
      */
     public function destroy(Cluster $cluster)
     {
-        //
+        Cluster::where('id_cluster',$cluster)->delete();
+        return redirect('/cluster');
     }
 }
