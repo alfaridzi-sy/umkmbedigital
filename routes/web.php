@@ -37,6 +37,7 @@ Route::post('/cluster/edit/{id_cluster}','App\Http\Controllers\ClusterController
 Route::post('/cluster/store','App\Http\Controllers\ClusterController@store');;
 Route::get('/cluster/destroy/{id_cluster}','App\Http\Controllers\ClusterController@destroy');
 Route::get('/cluster/update/{id_cluster}', 'App\Http\Controllers\ClusterController@update');
+// {{route('cluster.update,['cluster' => $cluster -> id_cluster])}}
 
 // Laporan
 Route::get('/laporan/cluster','App\Http\Controllers\LaporanClusterController@cluster');

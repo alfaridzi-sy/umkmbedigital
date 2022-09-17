@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('page_title')
-    Tambah Cluster
+    Edit Cluster
 @endsection
 
 @section('breadcrumb')
@@ -9,7 +9,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Menu</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Tambah Data Cluster </li>
+                <li class="breadcrumb-item active" aria-current="page">Edit Data Cluster </li>
             </ol>
         </nav>
     </div>
@@ -29,7 +29,7 @@
             <form method="POST" action="{!! url('cluster/edit')!!}/{{$cluster->id_cluster}}" enctype="multipart/form-data">
                 @csrf
                 
-                <div class="form-group row">
+                    <div class="form-group row">
                     <label for="nm_menu" class="col-md-4 col-form-label text-md-right">{{ __('Penanggung Jawab') }}</label>
                     <div class="col-md-6">
                         <input id="penanggung_jawab" type="text" class="form-control @error('penanggung_jawab') is-invalid @enderror" name="penanggung_jawab" value="{{ $cluster->penanggung_jawab }}" required autocomplete="penanggung_jawab" autofocus>
