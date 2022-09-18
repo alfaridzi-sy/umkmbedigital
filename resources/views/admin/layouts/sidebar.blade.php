@@ -59,7 +59,7 @@
                 <div class="dropdown-divider"></div>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="cluster">
                         <i class="fas fa-users text-yellow"></i> Data Klaster
                     </a>
                 </li>
@@ -85,7 +85,7 @@
                 <div class="dropdown-divider"></div>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="laporan/cluster">
                         <i class="fas fa-file-text text-purple"></i> Laporan Klaster
                     </a>
                 </li>
