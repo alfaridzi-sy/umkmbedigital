@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\DashboardController;
 
 /*
@@ -33,6 +35,9 @@ Route::get('adminLogin', [LoginController::class, 'index'])->name('admin.login')
 Route::post('adminAuthenticate', [LoginController::class, 'authenticate'])->name('admin.authenticate');
 Route::post('adminLogout', [LoginController::class, 'logout'])->name('admin.logout');
 
+Route::resource('category',CategoryController::class);
+Route::resource('product',ProductController::class);
+
 Route::get('/cluster','App\Http\Controllers\ClusterController@index');
 Route::get('/cluster/create','App\Http\Controllers\ClusterController@create');
 Route::post('/cluster/show','App\Http\Controllers\ClusterController@show');
@@ -44,3 +49,4 @@ Route::get('/cluster/update/{id_cluster}', 'App\Http\Controllers\ClusterControll
 
 // Laporan
 Route::get('/laporan/cluster','App\Http\Controllers\LaporanClusterController@cluster');
+
