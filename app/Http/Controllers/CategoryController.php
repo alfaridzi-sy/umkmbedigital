@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+Use Illuminate\Http\Request;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Category;
@@ -15,7 +16,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $category = Category::all();
+        return view('admin.category.index',["categories"=> $category]);
     }
 
     /**
@@ -25,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.create');
     }
 
     /**
@@ -34,9 +36,10 @@ class CategoryController extends Controller
      * @param  \App\Http\Requests\StoreCategoryRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCategoryRequest $request)
+    public function store(Request $request)
     {
-        //
+        $category = Category::create($request->all());
+        return redirect('category');
     }
 
     /**
@@ -47,7 +50,8 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        // $category = Category::find($id_kategori);
+        // return view('admin.category.index',["categories" => $category]);
     }
 
     /**
@@ -56,9 +60,10 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit($id_kategori)
     {
-        //
+        $category = Category::find($id_kategori);
+        return view('admin.category.update', ["categories" => $category]);
     }
 
     /**
@@ -68,9 +73,11 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCategoryRequest $request, Category $category)
+    public function update(Request $request, $id_kategori)
     {
-        //
+        $category = Category::find($id_kategori);
+        $category->update($request->all());
+        return redirect('category');
     }
 
     /**
@@ -79,8 +86,9 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy($id_kategori)
     {
-        //
+        Category::destroy($id_kategori);
+        return redirect('category');
     }
 }

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\DashboardController;
 
 /*
@@ -32,6 +34,10 @@ Route::get('adminIndex', [DashboardController::class, 'index'])->name('admin.ind
 Route::get('adminLogin', [LoginController::class, 'index'])->name('admin.login');
 Route::post('adminAuthenticate', [LoginController::class, 'authenticate'])->name('admin.authenticate');
 Route::post('adminLogout', [LoginController::class, 'logout'])->name('admin.logout');
+
+
+Route::resource('category',CategoryController::class);
+Route::resource('product',ProductController::class);
 
 Route::get('/cluster','App\Http\Controllers\ClusterController@index')->name('admin.cluster');
 Route::get('/cluster/create','App\Http\Controllers\ClusterController@create');
