@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +27,6 @@ Route::get('/adminIndex', function () {
 Route::get('adminLogin', [LoginController::class, 'index'])->name('admin.login');
 Route::post('adminAuthenticate', [LoginController::class, 'authenticate'])->name('admin.authenticate');
 Route::post('adminLogout', [LoginController::class, 'logout'])->name('admin.logout');
+
+Route::resource('category',CategoryController::class);
+Route::resource('product',ProductController::class);

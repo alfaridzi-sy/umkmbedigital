@@ -64,12 +64,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="/category">
                         <i class="fas fa-chart-pie text-warning"></i> Data Kategori
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="/product">
                         <i class="fas fa-list-alt text-success"></i> Data Produk
                     </a>
                 </li>
