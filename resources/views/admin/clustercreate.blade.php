@@ -1,14 +1,14 @@
 @extends('admin.layouts.master')
 
 @section('page_title')
-    Tambah Cluster
+    Klaster  | UMKM Be Digital Sidamanik
 @endsection
 
 @section('breadcrumb')
     <div class="page-header">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Menu</a></li>
+                <li class="breadcrumb-item"><a href="#">Klaster</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Tambah Data Cluster </li>
             </ol>
         </nav>
@@ -65,7 +65,7 @@
                     </div>
                 </div>
 
-                
+
                 <div class="form-group row mb-0">
                     <div class="col-md-12 offset-md-12 text-center">
                         <button type="submit" class="btn btn-warning">
