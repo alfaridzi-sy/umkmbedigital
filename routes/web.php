@@ -27,18 +27,19 @@ Route::get('/', function () {
 
 Route::get('adminIndex', [DashboardController::class, 'index'])->name('admin.index');
 
-Route::get('/cluster', function () {
-    return view('admin.cluster');
-});
+// Route::get('/cluster', function () {
+//     return view('admin.cluster');
+// });
 
 Route::get('adminLogin', [LoginController::class, 'index'])->name('admin.login');
 Route::post('adminAuthenticate', [LoginController::class, 'authenticate'])->name('admin.authenticate');
 Route::post('adminLogout', [LoginController::class, 'logout'])->name('admin.logout');
 
+
 Route::resource('category',CategoryController::class);
 Route::resource('product',ProductController::class);
 
-Route::get('/cluster','App\Http\Controllers\ClusterController@index');
+Route::get('/cluster','App\Http\Controllers\ClusterController@index')->name('admin.cluster');
 Route::get('/cluster/create','App\Http\Controllers\ClusterController@create');
 Route::post('/cluster/show','App\Http\Controllers\ClusterController@show');
 Route::post('/cluster/edit/{id_cluster}','App\Http\Controllers\ClusterController@edit');;
@@ -48,5 +49,4 @@ Route::get('/cluster/update/{id_cluster}', 'App\Http\Controllers\ClusterControll
 // {{route('cluster.update,['cluster' => $cluster -> id_cluster])}}
 
 // Laporan
-Route::get('/laporan/cluster','App\Http\Controllers\LaporanClusterController@cluster');
-
+Route::get('/laporan/cluster','App\Http\Controllers\LaporanClusterController@cluster')->name('laporan.cluster');

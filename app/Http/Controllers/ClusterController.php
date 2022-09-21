@@ -16,8 +16,8 @@ class ClusterController extends Controller
     public function index()
     {
         $cluster = Cluster::all();
-                return view('admin.cluster', ["cluster" => $cluster]);
-            
+        return view('admin.cluster', ["cluster" => $cluster]);
+
     }
 
     /**
@@ -39,7 +39,7 @@ class ClusterController extends Controller
     public function store(StoreClusterRequest $request)
     {
         $new_id = Cluster::orderByDesc('id_cluster')->first();
-        
+
         if(!isset($new_id->id_cluster)){
             $new_id = sprintf('%04d',1);
         }
@@ -47,8 +47,8 @@ class ClusterController extends Controller
             $new_id = sprintf('%04d',$new_id->id_cluster);
         }
         Cluster::create($request->all() + ['id_admin' => 1]);
-        return redirect('/cluster');        
-        
+        return redirect('/cluster');
+
     }
 
     /**
@@ -61,10 +61,10 @@ class ClusterController extends Controller
     {
         $cluster = Cluster::find($cluster);
         return view('admin.clusterdetail', ["clusters" => $cluster]);
-    
+
     }
 
-    
+
     /**
      * Update the specified resource in storage.
      *
@@ -77,16 +77,16 @@ class ClusterController extends Controller
         $cluster = Cluster::where('id_cluster',$cluster)->first();
         $cluster->update($request->all());
         return redirect('/cluster');
-    
+
     }
 
-    
+
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Cluster  $cluster
      * @return \Illuminate\Http\Response
-     */    
+     */
     public function update($cluster)
     {
         $cluster = Cluster::where('id_cluster', $cluster)->first();

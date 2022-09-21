@@ -1,5 +1,4 @@
 <!--   Core   -->
-<script src="{{ asset('master/assets/js/plugins/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ asset('master/assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
 <!--   Optional JS   -->
 <script src="{{ asset('master/assets/js/plugins/chart.js/dist/Chart.min.js') }}"></script>
@@ -16,21 +15,10 @@
     });
 </script>
     <!-- Datatables -->
-<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+{{-- <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script> --}}
 
-<script>
-$(document).ready(function () {
-    $('#dt_tables').DataTable(
-        {
-            dom: 'Bfrtip',
-            buttons: [
-                'print'
-            ]
-        }
-    );
-});
-</script>    
+
 
