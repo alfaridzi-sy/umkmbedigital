@@ -17,7 +17,8 @@
                     <div class="row">
                         <div class="col">
                             <h5 class="card-title text-uppercase text-muted mb-0">Klaster</h5>
-                            {{-- <span class="h2 font-weight-bold mb-0">{{ $user }}</span> --}}
+                            <br>
+                            <span class="h2 font-weight-bold mb-0">{{ $clusters }}</span>
                         </div>
                         <div class="col-auto">
                             <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
@@ -25,10 +26,6 @@
                             </div>
                         </div>
                     </div>
-                    <p class="mt-3 mb-0 text-muted text-sm">
-                        {{-- <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> {{$persen_user}}%</span> --}}
-                        {{-- <span class="text-nowrap">Pengguna ditambahkan bulan ini</span> --}}
-                    </p>
                 </div>
             </div>
         </div>
@@ -38,7 +35,8 @@
                     <div class="row">
                         <div class="col">
                             <h5 class="card-title text-uppercase text-muted mb-0">Konsumen</h5>
-                            {{-- <span class="h2 font-weight-bold mb-0">{{$kategori}}</span> --}}
+                            <br>
+                            <span class="h2 font-weight-bold mb-0">{{ $consumers }}</span>
                         </div>
                         <div class="col-auto">
                             <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
@@ -46,10 +44,6 @@
                             </div>
                         </div>
                     </div>
-                    <p class="mt-3 mb-0 text-muted text-sm">
-                        {{-- <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> {{$kategori_bulan}}</span> --}}
-                        {{-- <span class="text-nowrap">Kategori baru bulan ini.</span> --}}
-                    </p>
                 </div>
             </div>
         </div>
@@ -59,7 +53,8 @@
                     <div class="row">
                         <div class="col">
                             <h5 class="card-title text-uppercase text-muted mb-0">Produk</h5>
-                            {{-- <span class="h2 font-weight-bold mb-0">{{$toko}}</span> --}}
+                            <br>
+                            <span class="h2 font-weight-bold mb-0">{{ $products }}</span>
                         </div>
                         <div class="col-auto">
                             <div class="icon icon-shape bg-success text-white rounded-circle shadow">
@@ -67,10 +62,6 @@
                             </div>
                         </div>
                     </div>
-                    <p class="mt-3 mb-0 text-muted text-sm">
-                        {{-- <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> {{$persen_toko}}%</span> --}}
-                        {{-- <span class="text-nowrap">Toko mendaftar bulan ini.</span> --}}
-                    </p>
                 </div>
             </div>
         </div>
@@ -80,7 +71,8 @@
                     <div class="row">
                         <div class="col">
                             <h5 class="card-title text-uppercase text-muted mb-0">Pesanan</h5>
-                            {{-- <span class="h2 font-weight-bold mb-0">{{$menu}}</span> --}}
+                            <br>
+                            <span class="h2 font-weight-bold mb-0">{{ $orders }}</span>
                         </div>
                         <div class="col-auto">
                             <div class="icon icon-shape bg-info text-white rounded-circle shadow">
@@ -88,10 +80,6 @@
                             </div>
                         </div>
                     </div>
-                    <p class="mt-3 mb-0 text-muted text-sm">
-                        {{-- <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> {{$menu_bulan}}</span> --}}
-                        {{-- <span class="text-nowrap">Menu baru bulan ini.</span> --}}
-                    </p>
                 </div>
             </div>
         </div>
@@ -109,7 +97,7 @@
         </div>
         <div class="card-body border-0">
             <p class="text">
-                Lorem ipsum.
+                Desc here.
             </p>
         </div>
     </div>
