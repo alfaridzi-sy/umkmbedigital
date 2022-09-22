@@ -9,7 +9,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Klaster</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Tambah Data Cluster </li>
+                <li class="breadcrumb-item active" aria-current="page">Tambah Data Klaster </li>
             </ol>
         </nav>
     </div>

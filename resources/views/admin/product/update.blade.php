@@ -1,82 +1,113 @@
 @extends('admin.layouts.master')
 
+@section('page_title')
+Produk  | UMKM Be Digital Sidamanik
+@endsection
+
+@section('breadcrumb')
+    <div class="page-header">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Produk</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Edit Data Produk </li>
+            </ol>
+        </nav>
+    </div>
+@endsection
+
 @section('content')
 
-<div class="content col-xl-12 col-lg-12 mt-5">
-    <div class="card card-info card-outline">
-        <div class="card-header">
-        </div>
-        <div class="card-body">
-            <div class="card-tools">
-                <h4 class="header-title">EDIT DATA KATEGORI</h4>
-                <form action="{{route('product.update',$products -> id_produk)}}" method="POST">
-                @csrf
-                @method('PATCH')
-                <div class="form-group">
-                    <label for="jenis">Deskripsi Produk :</label>
-                    <input type="text" class="form-control" id="deskripsi_produk" 
-                    name="deskripsi_produk" value="{{$products -> deskripsi_produk}}">
+    <div class="card shadow">
+        <div class="card-header border-0">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h1 class="mb-0 text-center">Edit Data Produk</h1>
+                    <hr width=50%>
                 </div>
-                <div class="form-group">
-                    <label for="jenis">Stok :</label>
-                    <input type="number" class="form-control" id="stok" 
-                    name="stok" value="{{$products -> stok}}">
-                </div>
-                <div class="form-group">
-                    <label for="jenis">Harga :</label>
-                    <input type="number" class="form-control" id="harga" 
-                    name="harga" value="{{$products -> harga}}">
-                </div>
-                <div class="form-group">
-                    <label for="foto">Foto :</label>
-                    <input type="text" class="form-control" id="foto" placeholder="Enter Jenis" 
-                    name="foto" value="{{$products -> foto}}">
-                    <br>
-                    <input type="file" class="form-control" id="foto" placeholder="Enter Jenis" 
-                    name="foto" value="{{$products -> foto}}">
-                </div>
-                <div class="form-group">
-                    <label for="id_kategori">Kategori :</label>
-                    
-                    <select class="form-control @error('id_kategori') is-invalid @enderror" 
-                        name="id_kategori" value="{{ old('id_kategori') }}" required autocomplete="id_kategori" 
-                        autofocus>
-                            <option value="" selected disabled hidden>Pilih Kategori</option>
-                            @foreach($categories as $ct)
-                                <option value="{{ $ct -> id_kategori }}" 
-                                    <?php if ($products->id_kategori ==  $ct -> id_kategori ) echo "selected"; ?>>
-                                    {{ $ct -> jenis_produk}}</option>
-                            @endforeach
-                    </select>
-                    @error('id_kategori')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label for="cluster">Klaster :</label>
-                    <select class="form-control @error('id_cluster') is-invalid @enderror" 
-                        name="id_cluster" value="{{ old('id_cluster') }}" required autocomplete="id_cluster" 
-                        autofocus>
-                            <option value="" selected disabled hidden>Pilih Klaster</option>
-                            @foreach($clusters as $cl)
-                                <option value="{{ $cl -> id_cluster }}" 
-                                    <?php if ($products->id_cluster ==  $cl -> id_cluster ) echo "selected"; ?>>
-                                    {{ $cl -> nama}}</option>
-                            @endforeach
-                    </select>
-                    @error('id_cluster')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-                <button type="submit" class="btn btn-primary">Save</button> 
-            </form>
             </div>
         </div>
+        <div class="card-body border-0">
+            <form action="{{route('product.update',$products -> id_produk)}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('PATCH')
+
+                <div class="form-group row">
+                    <label for="nama_produk" class="col-md-4 col-form-label text-md-right">{{ __('Nama Produk') }}</label>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="nama_produk" name="nama_produk" value="{{$products -> nama_produk}}">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="deskripsi_produk" class="col-md-4 col-form-label text-md-right">{{ __('Deskripsi Produk') }}</label>
+                    <div class="col-md-6">
+                        <textarea class="form-control" name="deskripsi_produk" id="deskripsi_produk" rows="5">{{$products -> deskripsi_produk}}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="stok" class="col-md-4 col-form-label text-md-right">{{ __('Jumlah Stok') }}</label>
+                    <div class="col-md-6">
+                        <input type="number" class="form-control" id="stok" name="stok" value="{{$products -> stok}}">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="harga" class="col-md-4 col-form-label text-md-right">{{ __('Harga Produk') }}</label>
+                    <div class="col-md-6">
+                        <input type="number" class="form-control" id="harga" name="harga" value="{{$products -> harga}}">
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label for="foto" class="col-md-4 col-form-label text-md-right">{{ __('Foto Produk') }}</label>
+                    <div class="col-md-6">
+                        <input type="file" class="form-control" id="foto" name="foto">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="id_kategori" class="col-md-4 col-form-label text-md-right">{{ __('Kategori Produk') }}</label>
+                    <div class="col-md-6">
+                        <select class="form-control" name="id_kategori" id="id_kategori">
+                            <option value="" selected disabled hidden>Pilih Kategori</option>
+                            @foreach($categories as $ct)
+                            <option value="{{ $ct -> id_kategori }}" <?php if ($products->id_kategori ==  $ct -> id_kategori ) echo "selected"; ?>>
+                                {{ $ct -> jenis_produk}}
+                            </option>
+                        @endforeach
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="id_klaster" class="col-md-4 col-form-label text-md-right">{{ __('Nama Klaster') }}</label>
+                    <div class="col-md-6">
+                        <select class="form-control" name="id_cluster" id="id_cluster">
+                            <option value="" selected disabled hidden>Pilih Klaster</option>
+                            @foreach($clusters as $cl)
+                            <option value="{{ $cl -> id_cluster }}" <?php if ($products->id_cluster ==  $cl -> id_cluster ) echo "selected"; ?>>
+                                {{ $cl -> nama}}
+                            </option>
+                        @endforeach
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-0">
+                    <div class="col-md-12 offset-md-12 text-center">
+                        <button type="submit" class="btn btn-warning" onclick="return confirm('Apakah Data Sudah Benar ?')">
+                            {{ __('Edit') }}
+                        </button>
+                        <button type="reset" class="btn btn-light">
+                            {{ __('Reset') }}
+                        </button>
+                        <a href="{!! url('product') !!}" class="btn btn-danger">Batal</a>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
 @endsection

@@ -9,6 +9,7 @@ use App\Models\Product;
 Use Illuminate\Http\Request;
 use App\Models\Kategori;
 use App\Models\Cluster;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -141,6 +142,8 @@ class ProductController extends Controller
      */
     public function destroy($id_produk)
     {
+        $product = Product::find($id_produk);
+        Storage::disk('public')->delete('product/' . $product->foto);
         Product::destroy($id_produk);
         return redirect('product');
     }
