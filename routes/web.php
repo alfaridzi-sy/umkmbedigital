@@ -31,9 +31,11 @@ Route::post('adminLogout', [LoginController::class, 'logout'])->name('admin.logo
 
 //Category
 Route::resource('category',CategoryController::class);
+Route::get('/category/destroy/{id_kategori}','App\Http\Controllers\CategoryController@destroy');
 
 //Product
 Route::resource('product',ProductController::class);
+Route::get('/product/destroy/{id_produk}','App\Http\Controllers\ProductController@destroy');
 
 //Cluster
 Route::get('/cluster','App\Http\Controllers\ClusterController@index')->name('admin.cluster');

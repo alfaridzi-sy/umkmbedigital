@@ -9,7 +9,7 @@ Klaster  | UMKM Be Digital Sidamanik
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Klaster</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Edit Data Cluster </li>
+                <li class="breadcrumb-item active" aria-current="page">Edit Data Klaster </li>
             </ol>
         </nav>
     </div>
