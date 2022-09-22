@@ -36,7 +36,7 @@
                                 <td scope="row">{{$p -> harga}}</td>
                                 {{-- <td scope="row">{{$p -> foto}}</td> --}}
                                 <td scope="row">
-                                    <img src="/storage/produk/{{ $p -> foto }}" width= "100px" >
+                                    <img src="/storage/product/{{$p -> foto}}" width= "100px" >
                                 </td>
                                 <td scope="row">{{$p -> category -> jenis_produk}}</td>
                                 <td scope="row">{{$p -> cluster -> nama}}</td>

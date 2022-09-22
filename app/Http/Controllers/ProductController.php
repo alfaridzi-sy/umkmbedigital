@@ -9,6 +9,7 @@ use App\Models\Product;
 Use Illuminate\Http\Request;
 use App\Models\Kategori;
 use App\Models\Cluster;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -80,11 +81,12 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $product = Product::create($request->all());
-        if ($request->hasFile('foto')) {
+        if ($request->file('foto')) {
             $foto = $request->foto->getClientOriginalName();
             $request->foto->storeAs('product', $foto, 'public');
             $product->update(['foto' => $foto]);
         }
+        
         return redirect('product');
     }
 
