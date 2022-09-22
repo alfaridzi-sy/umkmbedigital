@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+Use Illuminate\Http\Request;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use App\Models\Order;
+use App\Models\OrderDetail;
 
 class OrderController extends Controller
 {
@@ -15,7 +17,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $order  = Order::all();
+        return view('admin.order.index', ["orders" => $order]);
     }
 
     /**
@@ -45,9 +48,10 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order)
+    public function show($id_pesan)
     {
-        //
+        $detail  = OrderDetail::where('id_pesan', $id_pesan)->get();
+        return view('admin.order.detail', ["details" => $detail]);
     }
 
     /**
@@ -56,9 +60,10 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function edit(Order $order)
+    public function edit($id_pesan)
     {
-        //
+        $order = Order::find($id_pesan);
+        return view('admin.order.status', ["orders" => $order]);
     }
 
     /**
@@ -68,9 +73,11 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateOrderRequest $request, Order $order)
+    public function update(Request $request, $id_order)
     {
-        //
+        $order = Order::find($id_order);
+        $order->update($request->all());
+        return redirect('order');
     }
 
     /**

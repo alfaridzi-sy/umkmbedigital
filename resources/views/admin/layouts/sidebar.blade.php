@@ -77,8 +77,8 @@
                 <div class="dropdown-divider"></div>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-shopping-bag text-info"></i> Data Penjualan
+                    <a class="nav-link" href="/order">
+                        <i class="fas fa-shopping-bag text-info"></i> Data Pesanan
                     </a>
                 </li>
 

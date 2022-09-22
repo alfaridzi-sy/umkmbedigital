@@ -51,7 +51,7 @@
                         <td scope="row">
                             <img src="/storage/product/{{ $p -> foto }}" width= "100px" >
                         </td>
-                        <td scope="row">{{$p -> nama_produk}}</td>
+                        <td scope="row" class="text-truncate">{{$p -> nama_produk}}</td>
                         <td scope="row">{{$p -> deskripsi_produk}}</td>
                         <td scope="row">{{$p -> stok}}</td>
                         <td scope="row">{{$p -> harga}}</td>
