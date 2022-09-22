@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +49,6 @@ Route::get('/cluster/update/{id_cluster}', 'App\Http\Controllers\ClusterControll
 
 // Laporan
 Route::get('/laporan/cluster','App\Http\Controllers\LaporanClusterController@cluster')->name('laporan.cluster');
+
+//Order
+Route::resource('order', OrderController::class);
