@@ -53,23 +53,23 @@
             <!-- Navigation -->
             <ul class="navbar-nav">
                 <li class="nav-item  class=" active>
-                    <a class=" nav-link active " href="/adminIndex"> <i class="ni ni-tv-2 text-primary"></i> Dashboard</a>
+                    <a class=" nav-link active " href="/public/adminIndex"> <i class="ni ni-tv-2 text-primary"></i> Dashboard</a>
                 </li>
 
                 <div class="dropdown-divider"></div>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/cluster">
+                    <a class="nav-link" href="/public/cluster">
                         <i class="fas fa-users text-yellow"></i> Data Klaster
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/category">
+                    <a class="nav-link" href="/public/category">
                         <i class="fas fa-chart-pie text-warning"></i> Data Kategori
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/product">
+                    <a class="nav-link" href="/public/product">
                         <i class="fas fa-list-alt text-success"></i> Data Produk
                     </a>
                 </li>
@@ -77,7 +77,7 @@
                 <div class="dropdown-divider"></div>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/order">
+                    <a class="nav-link" href="/public/order">
                         <i class="fas fa-shopping-bag text-info"></i> Data Pesanan
                     </a>
                 </li>
@@ -85,7 +85,7 @@
                 <div class="dropdown-divider"></div>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/laporan/cluster">
+                    <a class="nav-link" href="/public/laporan/cluster">
                         <i class="fas fa-file-text text-purple"></i> Laporan Klaster
                     </a>
                 </li>
