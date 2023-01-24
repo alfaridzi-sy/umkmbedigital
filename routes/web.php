@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,19 @@ use App\Http\Controllers\OrderController;
 
 Route::get('/', function () {
     return view('admin.login.index');
+});
+
+Route::prefix('customer')->group(function () {
+    Route::get('/beranda', [CustomerController::class, 'index'])->name('customer.beranda');
+    Route::get('/produk', [CustomerController::class, 'product'])->name('customer.produk');
+    Route::get('/hubungi-kami', [CustomerController::class, 'contact'])->name('customer.contact');
+    // Route::get('/{id}', [CustomerTypeController::class, 'detail']);
+    // Route::post('/add', [CustomerTypeController::class, 'add']);
+    // Route::put('/{id}', [CustomerTypeController::class, 'update']);
+    // Route::delete('/{id}', [CustomerTypeController::class, 'delete']);
+    // Route::get('/home', function () {
+    //     return view('customer.index');
+    // });
 });
 
 //Dashboard
