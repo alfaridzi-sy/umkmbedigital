@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-md-4 d-flex justify-content-center align-items-center">
                     <div class="fruit_img-box d-flex justify-content-center align-items-center">
-                        <img src="/storage/product/{{ $product -> foto }}" alt="" class="" width="250px" />
+                        <img src="{{ asset('storage/product/')$product -> foto }}" alt="" class="" width="250px" />
                     </div>
                 </div>
             </div>
