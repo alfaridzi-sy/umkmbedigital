@@ -49,7 +49,7 @@
                     <tr class="text-center">
                         <td scope="row">{{$k + 1}}</td>
                         <td scope="row">
-                            <img src="/storage/product/{{ $p -> foto }}" width= "100px" >
+                            <img src="https://sdmnk.umkmbedigital.com/public/storage/product/{{ $p -> foto }}" width= "100px" >
                         </td>
                         <td scope="row" class="text-truncate">{{$p -> nama_produk}}</td>
                         <td scope="row"><?php echo substr($p->deskripsi_produk, 0, 20) ?> ...</td>

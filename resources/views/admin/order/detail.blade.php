@@ -28,7 +28,7 @@
         <div class="card-body border-0">
             <div class="row">
                 <div class="col-4">
-                    <img src="/storage/product/{{ $dt -> product -> foto }}" width= "300px" >
+                    <img src="https://sdmnk.umkmbedigital.com/public/storage/product/{{ $dt -> product -> foto }}" width= "300px" >
                 </div>
                 <div class="col-8">
                     <h1 class="h3">{{ $dt -> product -> nama_produk }}</h1>
